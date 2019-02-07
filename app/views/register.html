@@ -1,0 +1,39 @@
+#{extends 'main.html' /}
+<div class="container d-flex align-items-center">
+    <div id="register-container"  class="container">
+        <div class="row info-header">
+            <h2>New teacher</h2>
+        </div>
+        <div class="row info-content">
+
+            <form name="formReg" id="register" method="POST" action="/submit" class="form-horizontal full-width">
+                <h3>Basics</h1>
+                    #{field 'firstName'}
+                    <div class="form-group">
+                        <label for="name">First name</label>
+                        <input name="teacher.firstName"
+                            id="firstName" class="form-control form-control-lg" type="text" placeholder="John" oninput="this.className = ' '">
+                    </div>
+                    #{/field}
+                    
+                    #{field 'lastName'}
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input name="teacher.lastName"
+                            id="lastName" class="form-control form-control-lg" type="text" placeholder="Doe" oninput="this.className = ' '">
+                    </div>
+                    #{/field}
+                    
+                    #{field 'email'}
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input name="teacher.email"
+                            id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '">
+                    </div>
+                    #{/field}
+                    
+                    <center><button type="submit" class="alert">Save</button></center>
+            </form>       
+        </div>
+    </div>
+</div>

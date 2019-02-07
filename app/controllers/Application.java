@@ -15,8 +15,8 @@ public class Application extends Controller {
         render();
     }
     
-    public static void createTeacher(String firstName, String lastName, String email) throws InterruptedException{
-        Teacher teacher = new Teacher(firstName, lastName, email);
+    public static void createTeacher(Teacher teacher){
+        teacher.employeeNumber = teacher.getIndex();
         teacher.save();
         System.out.println("----------------saved----------------");
         System.out.println("teacher name saved: "+teacher.firstName);
