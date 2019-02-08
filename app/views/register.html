@@ -6,7 +6,8 @@
         </div>
         <div class="row info-content">
 
-            <form name="formReg" id="register" method="POST" action="/submit" class="form-horizontal full-width">
+            <form name="formReg" id="register" method="POST" action="/submit" class="form-horizontal full-width" 
+                  onsubmit="alert('Professor saved correctly!')">
                 <h3>Basics</h1>
                     #{field 'firstName'}
                     <div class="form-group">
@@ -32,8 +33,13 @@
                     </div>
                     #{/field}
                     
-                    <center><button type="submit" class="alert">Save</button></center>
+                    <center><button type="submit" class="save">Save</button></center>
             </form>       
         </div>
     </div>
+</div>
+
+<div class="alertSuccess alert alert-success" role="alert">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> Indicates a successful or positive action.
 </div>

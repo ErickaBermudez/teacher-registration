@@ -9,48 +9,52 @@
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
     </head>
     <body>
-        
+
         <header>
             <nav class="navbar navbar-light bg-light teal darken-3">
                 <a class="navbar-brand" href="#">
                     <h1><p class="text-white">Teachers</p></h1>
                 </a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search by name or ID" aria-label="Search">
+                    <button class="btn-sm search" type="submit">Search</button>
+                </form>
             </nav>
         </header>
         #{doLayout /}
         <!-- Footer -->
         <footer class="page-footer font-small default-color fixed-bottom">
 
-          <!-- Copyright -->
-          <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <a href="#"> My University</a>
-          </div>
-          <!-- Copyright -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="#"> My University</a>
+            </div>
+            <!-- Copyright -->
 
         </footer>
         <!-- Footer -->
-  
-        <!-- SCRIPTS --->
-              <!-- Font Awesome -->
-              <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-              <!-- Bootstrap core CSS -->
-              <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-              <!-- Material Design Bootstrap -->
-              <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet">
-              <!-- JQuery -->
-              <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-              <!-- Bootstrap tooltips -->
-              <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-              <!-- Bootstrap core JavaScript -->
-              <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
-              <!-- MDB core JavaScript -->
-              <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
-              <!-- sweet alert -->
-              <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-              <!-- js for sweet alert -->
-              <script type="text/javascript" src="/public/javascripts/alert.js"></script>
 
-              #{get 'moreScripts' /}
+        <!-- SCRIPTS --->
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet">
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
+        <!-- sweet alert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <!-- js for sweet alert -->
+        <script type="text/javascript" src="/public/javascripts/alert.js"></script>
+
+        #{get 'moreScripts' /}
         <!-- END SCRIPTS -->
     </body>
 </html>

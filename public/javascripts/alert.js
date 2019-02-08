@@ -5,3 +5,10 @@
  */
 
 
+function alertSuccess(){
+    $(".alertSuccess").show();
+        setTimeout(function(){
+          $(".alertSuccess").hide(); 
+    }, 2000);
+    $("#register").submit();
+}

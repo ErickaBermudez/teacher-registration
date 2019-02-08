@@ -2,6 +2,7 @@
     --main-light-color: #e0f2f1;
     --main-bright-color: #ffc400;
     --main-faded-color: #C5C5F1;
+    --teal-accent: #a7ffeb;
 }
 /*container for options at index*/
 html, body{
@@ -106,11 +107,24 @@ button{
     border-radius: 25px; 
     width: 100px;
     height: 40px;
+    
+}
+
+button.save{
     background-color: var(--main-bright-color);
+}
+
+button.search{
+    background-color: var(--teal-accent);
+    color: black;
 }
 
 
 .form-check{
     padding: 1vw;
     font-size: 18px;
+}
+
+.alert{
+    display: none;
 }
