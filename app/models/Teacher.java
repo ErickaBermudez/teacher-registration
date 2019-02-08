@@ -6,11 +6,7 @@
 
 package models;
 
-import java.io.File;
-import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
 import play.db.jpa.*;
 
 

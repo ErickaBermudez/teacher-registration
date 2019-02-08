@@ -11,14 +11,40 @@
     <body>
 
         <header>
-            <nav class="navbar navbar-light bg-light teal darken-3">
-                <a class="navbar-brand" href="#">
+            <nav class="navbar navbar-light bg-light teal darken-3 navbar-expand-lg">
+                
+                <!--<a class="navbar-brand" href="#">
                     <h1><p class="text-white">Teachers</p></h1>
                 </a>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search by name or ID" aria-label="Search">
-                    <button class="btn-sm search" type="submit">Search</button>
+                <form method="POST" action="/search" class="form-inline">
+                    <input name="input.content"
+                        class="form-control mr-sm-2" type="search" placeholder="Search by name or ID" aria-label="Search">
+                    <button name="search" class="btn-sm search my-2 my-sm-0" type="submit">Search</button>
                 </form>
+            </nav>
+                -->
+                <a class="navbar-brand" href="#"><h1 class="text-white">Teachers</h1></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/new">New teacher</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#">Find teacher</a>
+                    </li>
+                  </ul>
+                  <form method="POST" action="/search" class="form-inline my-2 my-lg-0">
+                    <input name = "input.content" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button name="search" class="search my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
             </nav>
         </header>
         #{doLayout /}

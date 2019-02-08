@@ -1,12 +1,13 @@
 package controllers;
 
 import java.io.File;
-import play.*;
-import play.mvc.*;
 
 import java.util.*;
 
 import models.*;
+import play.*;
+import play.mvc.*;
+import play.mvc.results.Result;
 
 public class Application extends Controller {
 
@@ -15,21 +16,12 @@ public class Application extends Controller {
         render();
     }
     
-    public static void createTeacher(Teacher teacher){
-        teacher.employeeNumber = teacher.getIndex();
-        teacher.save();
-        System.out.println("----------------saved----------------");
-        System.out.println("teacher name saved: "+teacher.firstName);
-        System.out.println("teacher last name saved: "+teacher.lastName);
-        System.out.println("teacher email: "+teacher.email);
-        System.out.println("teacher id: "+teacher.employeeNumber);
-        index();
+    
+    public static void search(Long id){
+        Teacher teacher = Teacher.findById(id);
+        render(teacher);
     }
     
-    public static int getCurrentIndex(){
-        Teacher teacher = new Teacher();
-        return teacher.getCurrentIndex();
-    }
     
     public static void hi(){
         System.out.println("hello world");

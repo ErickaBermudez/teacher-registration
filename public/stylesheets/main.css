@@ -128,3 +128,11 @@ button.search{
 .alert{
     display: none;
 }
+
+.nav-link{
+    color: white !important;
+}
+
+.text-container{
+    padding: 3vw !important;
+}
