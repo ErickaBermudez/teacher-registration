@@ -27,11 +27,11 @@ and open the template in the editor.
             #{/elseif}
         </div>
         <div class="row info-content">
-            <div class="show-teachers">
+            <span class="show-teachers">
                 #{list items: teachers}
                     ${teachers.employeeNumber} ${teachers.firstName} ${teachers.lastName} ${teachers.email}
                 #{/list}
-            </div>
+            </span>
         </div>
     </div>
 </div>

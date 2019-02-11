@@ -54,7 +54,6 @@ public class Teacher extends Model{
     }
     
     public List findTeachersByNumber(int number){
-        System.out.println("NUMBER I GOT: "+ number);
         return Teacher.find("byEmployeeNumber", number).fetch();
     }
     

@@ -48,6 +48,12 @@ public class Searches extends Controller {
             number = Integer.valueOf(input.content);
             List<Teacher> teachers = new Teacher().findTeachersByNumber(number);
             render(number, teachers);
+        }else{
+            error();
         }
+    }
+    
+    public static void error(){
+        render();
     }
 }
