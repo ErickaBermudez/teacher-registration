@@ -22,6 +22,17 @@ html, body{
     background-color: var(--main-light-color);
 }
 
+#search-container{
+    width: 50vw !important;
+    height: auto;
+    background-color: var(--main-light-color);
+}
+
+.search-results{
+    margin-top: 1em;
+}
+
+
 .info-header{
     background-color: var(--main-bright-color);
     padding-top: 2vw;

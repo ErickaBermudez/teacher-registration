@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'Search' /}
+
+*{ Display a search by 'bar' or 'find' }*
+<div class="container d-flex align-items-center">
+    <div id="search-container"  class="container">
+        <div class="row info-header">
+            <h2>Find teacher</h2>
+        </div>
+        <div class="row info-content">
+            <form name="formSearch" id="search" method="POST" action="/search" class="form-horizontal full-width">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="searchContent">Search by ID: </label>
+                            <input name="input.content"
+                                    id="searchContent" class="form-control form-control-lg" type="text" placeholder="123" oninput="this.className = ' '">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="save" style="float: right;">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

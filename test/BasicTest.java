@@ -22,6 +22,13 @@ public class BasicTest extends UnitTest {
         assertEquals(2, Teacher.count());
         assertEquals(john.employeeNumber, 2);
         assertEquals(john.firstName, "John");
+        
+        List<Teacher> teachers = new Teacher().findTeachersByNumber(2);
+        
+        for(Teacher teacher : teachers){
+            System.out.println(teacher.firstName);
+        }
     }
+    
 
 }

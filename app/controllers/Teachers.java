@@ -7,7 +7,7 @@
 package controllers;
 
 import static controllers.Application.index;
-import models.Input;
+import models.Search;
 import models.Teacher;
 import play.mvc.Controller;
 
@@ -36,26 +36,9 @@ public class Teachers extends Controller{
         return teacher.getCurrentIndex();
     }
     
-    public static void determineSearch(Input input){
-        if(isInteger(input.content)){
-            System.out.println("it worked!");
-            
-            //searchById(Integer.parseInt(s));
-        }else{
-            //searchByName(s);
-        }
-    }
+
     
-    public static boolean isInteger(String s){
-        try{
-            Integer.parseInt(s);
-        }catch(NumberFormatException e){
-            return false;
-        }catch(NullPointerException e){
-            return false;
-        }
-        return true;
-    }
+
 
     private static void searchById(int parseInt) {
     }

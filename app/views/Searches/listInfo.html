@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+#{extends 'main.html' /}
+
+
+*{*************** Teacher list ****************}*
+
+
+
+<div class="container d-flex align-items-center">
+    <div id="search-container"  class="container">
+        <div class="row info-header">
+            #{if teachers.size() < 1}
+            <h2>
+                No teacher found with number '${number}'</h2>
+            #{/if}
+            #{elseif teachers.size() == 1}
+            <h2>Teacher found with ID: ${number}</h2>
+            #{/elseif}
+            #{elseif teachers.size > 1}
+            <h2>Teachers found starting with: ${number}</h2>
+            #{/elseif}
+        </div>
+        <div class="row info-content">
+            <div class="show-teachers">
+                #{list items: teachers}
+                    ${teachers.employeeNumber} ${teachers.firstName} ${teachers.lastName} ${teachers.email}
+                #{/list}
+            </div>
+        </div>
+    </div>
+</div>

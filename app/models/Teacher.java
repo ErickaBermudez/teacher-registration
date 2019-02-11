@@ -6,6 +6,7 @@
 
 package models;
 
+import java.util.List;
 import javax.persistence.Entity;
 import play.db.jpa.*;
 
@@ -51,5 +52,11 @@ public class Teacher extends Model{
     public int getCurrentIndex(){
         return counter;
     }
+    
+    public List findTeachersByNumber(int number){
+        System.out.println("NUMBER I GOT: "+ number);
+        return Teacher.find("byEmployeeNumber", number).fetch();
+    }
+    
 
 }

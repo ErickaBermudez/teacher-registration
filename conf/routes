@@ -17,7 +17,11 @@ GET     /public/                                staticDir:public
 # For the submit button 
 GET     /submit                                 Teachers.createTeacher
 POST    /submit                                 Teachers.createTeacher
-GET     /search                                 Teachers.determineSearch
-POST    /search                                 Teachers.determineSearch
+
 GET     /new                                    Teachers.register
 POST    /new                                    Teachers.register
+GET     /find                                   Searches.search
+POST    /find                                   Searches.search
+
+GET     /search                                 Searches.listInfo
+POST    /search                                 Searches.listInfo

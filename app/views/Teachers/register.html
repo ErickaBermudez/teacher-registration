@@ -1,4 +1,5 @@
 #{extends 'main.html' /}
+#{set title:'New Teacher' /}
 <div class="container d-flex align-items-center">
     <div id="register-container"  class="container">
         <div class="row info-header">
@@ -7,7 +8,7 @@
         <div class="row info-content">
             <form name="formReg" id="register" method="POST" action="/submit" class="form-horizontal full-width" 
                   onsubmit="alert('Professor saved correctly!')">
-                <h3>Basics</h1>
+                <h3>Basics</h3>
                     #{field 'firstName'}
                     <div class="form-group">
                         <label for="name">First name</label>

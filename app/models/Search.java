@@ -13,10 +13,10 @@ import play.db.jpa.*;
  * @author dsi
  */
 @Entity
-public class Input extends Model{
+public class Search extends Model{
     public String content;
     
-    public Input(){
+    public Search(){
         
     }
 }
