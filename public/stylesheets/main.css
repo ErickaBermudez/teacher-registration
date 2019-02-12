@@ -3,6 +3,8 @@
     --main-bright-color: #ffc400;
     --main-faded-color: #C5C5F1;
     --teal-accent: #a7ffeb;
+    --danger-background: #ffcdd2;
+    --danger-text: #b71c1c;
 }
 /*container for options at index*/
 html, body{
@@ -51,6 +53,17 @@ html, body{
 .show-teachers{
     font-size: 17px; 
     padding: 1vw; 
+}
+
+.error {
+    width: 100%; 
+    size: 20px;
+    height: 20px; 
+}
+
+.danger {
+    background-color: var(--danger-background);
+    color: var(--danger-text);
 }
 
 //******************************** tabs ****************************/
@@ -142,7 +155,7 @@ button.search{
 }
 
 .alert{
-    display: none;
+    width: 100%;
 }
 
 .nav-link{

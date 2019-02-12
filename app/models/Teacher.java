@@ -26,14 +26,19 @@ public class Teacher extends Model{
     public String firstName;
     public String lastName; 
     public String email; 
-    public int phoneNumber; 
+    public int phone; 
+    public int city;
+    public String cityName;
     
     public Teacher(String firstName, String lastName,
-            String email){
+            String email, int phoneNumber, int city){
         this.employeeNumber = getIndex();
+        this.cityName = getCityName(city);
         this.firstName = firstName;
         this.lastName = lastName; 
         this.email = email; 
+        this.phone = phoneNumber;
+        this.city = city;
     }
     
     public Teacher(){
@@ -43,6 +48,11 @@ public class Teacher extends Model{
     public int getIndex(){
         counter++; 
         return counter;
+    }
+    
+    public String getCityName(int id){
+        City c = new City();
+       return c.getCityNameById(id);
     }
     
     public Teacher getLastTeacherById(int id){

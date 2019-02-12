@@ -6,40 +6,69 @@
             <h2>New teacher</h2>
         </div>
         <div class="row info-content">
-            <form name="formReg" id="register" method="POST" action="/submit" class="form-horizontal full-width" 
-                  onsubmit="alert('Professor saved correctly!')">
-                <h3>Basics</h3>
-                    #{field 'firstName'}
-                    <div class="form-group">
-                        <label for="name">First name</label>
-                        <input name="teacher.firstName"
-                            id="firstName" class="form-control form-control-lg" type="text" placeholder="John" oninput="this.className = ' '">
-                    </div>
-                    #{/field}
-                    
-                    #{field 'lastName'}
-                    <div class="form-group">
-                        <label for="last-name">Last name</label>
-                        <input name="teacher.lastName"
-                            id="lastName" class="form-control form-control-lg" type="text" placeholder="Doe" oninput="this.className = ' '">
-                    </div>
-                    #{/field}
-                    
-                    #{field 'email'}
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input name="teacher.email"
-                            id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '">
-                    </div>
-                    #{/field}
-                    
-                    <center><button type="submit" class="save">Save</button></center>
+            #{ifErrors}
+            <div class="alert alert-danger" role="alert">
+                Oops! All fields are required.
+            </div>
+            #{/ifErrors}
+            #{if flash.success}
+            <div class="alert alert-success" role="alert">
+                ${flash.success}
+            </div>
+
+            #{/if}
+            <form name="formReg" id="register" method="POST" action="/submit" class="form-horizontal full-width">
+                #{field 'firstName'}
+                <div class="form-group">
+                    <label for="name">First name</label>
+                    <input name="teacher.firstName"
+                           required
+                           id="firstName" class="form-control form-control-lg" type="text" placeholder="John" oninput="this.className = ' '">
+                </div>
+                #{/field}
+
+                #{field 'lastName'}
+                <div class="form-group">
+                    <label for="last-name">Last name</label>
+                    <input name="teacher.lastName"
+                           required
+                           id="lastName" class="form-control form-control-lg" type="text" placeholder="Doe" oninput="this.className = ' '">
+                </div>
+                #{/field}
+
+                #{field 'email'}
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="teacher.email"
+                           id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '"
+                           required>
+                    <span class="error">#{error 'email' /}</span>
+                </div>
+                #{/field}
+                #{field 'phone'}
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input name="teacher.phone"
+                           required
+                           pattern="^\d{7}$"
+                           title="Seven digits ONLY NUMBERS"
+                           id="phone" class="form-control form-control-lg" type="tel" placeholder="4997270" oninput="this.className = ' '">
+                </div>
+                #{/field}
+                #{field 'city'}
+                <div class="form-group">
+                    <label for="city">Select your city: </label>
+                    <select name="teacher.city" class="custom-select">
+                        <option value="1" selected>Chihuahua</option>
+                        <option value="2">Guadalajara</option>
+                        <option value="3">Sonora</option>
+                        <option value="4">Mexicalli</option>
+                    </select>
+                </div>
+                #{/field}
+
+                <center><button type="submit" class="save">Save</button></center>
             </form>       
         </div>
     </div>
-</div>
-
-<div class="alertSuccess alert alert-success" role="alert">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Success!</strong> Indicates a successful or positive action.
 </div>
