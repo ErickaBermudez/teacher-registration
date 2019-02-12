@@ -48,6 +48,11 @@ html, body{
     padding: 2vw;
 }
 
+.show-teachers{
+    font-size: 17px; 
+    padding: 1vw; 
+}
+
 //******************************** tabs ****************************/
 
  /* Style the form */

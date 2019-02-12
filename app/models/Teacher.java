@@ -26,6 +26,7 @@ public class Teacher extends Model{
     public String firstName;
     public String lastName; 
     public String email; 
+    public int phoneNumber; 
     
     public Teacher(String firstName, String lastName,
             String email){

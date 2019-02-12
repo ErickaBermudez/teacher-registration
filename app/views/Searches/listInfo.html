@@ -27,9 +27,10 @@ and open the template in the editor.
             #{/elseif}
         </div>
         <div class="row info-content">
+            
             <span class="show-teachers">
                 #{list items: teachers}
-                    ${teachers.employeeNumber} ${teachers.firstName} ${teachers.lastName} ${teachers.email}
+                    ${teachers.employeeNumber.toString().replaceAll("\\[", "").replaceAll("\\]","")} &nbsp;&nbsp;&nbsp;&nbsp; ${teachers.firstName.toString().replaceAll("\\[", "").replaceAll("\\]","")} ${teachers.lastName.toString().replaceAll("\\[", "").replaceAll("\\]","")} &nbsp;&nbsp;&nbsp;&nbsp; ${teachers.email.toString().replaceAll("\\[", "").replaceAll("\\]","")}
                 #{/list}
             </span>
         </div>
