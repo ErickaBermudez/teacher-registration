@@ -8,6 +8,7 @@ package models;
 
 import java.util.List;
 import javax.persistence.Entity;
+import play.data.validation.*;
 import play.db.jpa.*;
 
 
@@ -23,23 +24,73 @@ public class Teacher extends Model{
     
     static int counter = 0;
     public int employeeNumber;
+    @Required
     public String firstName;
-    public String lastName; 
+    @Required
     public String email; 
+    @Required
     public int phone; 
+    @Required
     public int city;
     public String cityName;
-    
-    public Teacher(String firstName, String lastName,
-            String email, int phoneNumber, int city){
-        this.employeeNumber = getIndex();
-        this.cityName = getCityName(city);
+
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        Teacher.counter = counter;
+    }
+
+    public int getEmployeeNumber() {
+        return employeeNumber;
+    }
+
+    public void setEmployeeNumber(int employeeNumber) {
+        this.employeeNumber = employeeNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
-        this.lastName = lastName; 
-        this.email = email; 
-        this.phone = phoneNumber;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getPhone() {
+        return phone;
+    }
+
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
+
+    public int getCity() {
+        return city;
+    }
+
+    public void setCity(int city) {
         this.city = city;
     }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
     
     public Teacher(){
         

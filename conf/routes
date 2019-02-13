@@ -15,8 +15,6 @@ GET     /public/                                staticDir:public
 *       /{controller}/{action}                  {controller}.{action}
 
 # For the submit button 
-GET     /submit                                 Teachers.createTeacher
-POST    /submit                                 Teachers.createTeacher
 
 GET     /new                                    Teachers.register
 POST    /new                                    Teachers.register

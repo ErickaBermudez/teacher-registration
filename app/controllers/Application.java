@@ -26,7 +26,6 @@ public class Application extends Controller {
     public static void hi(){
         System.out.println("hello world");
     }
-    
-    
+
 
 }

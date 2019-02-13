@@ -57,12 +57,9 @@ html, body{
 
 .error {
     width: 100%; 
-    size: 20px;
-    height: 20px; 
 }
 
 .danger {
-    background-color: var(--danger-background);
     color: var(--danger-text);
 }
 

@@ -5,9 +5,9 @@
  */
 package controllers;
 
-import static controllers.Application.index;
-import models.Search;
+import static controllers.Application.*;
 import models.Teacher;
+import play.data.validation.*;
 import play.mvc.Controller;
 
 /**
@@ -15,30 +15,38 @@ import play.mvc.Controller;
  * @author dsi
  */
 public class Teachers extends Controller {
-
-    public static void register() {
+    public static void register(){
         render();
     }
 
-    public static void createTeacher(Teacher teacher) {
-        teacher.employeeNumber = teacher.getIndex();
-        teacher.cityName = teacher.getCityName(teacher.city);
-        validation.required(teacher.email);
-        validation.required(teacher.firstName);
-        validation.required(teacher.lastName);
-        validation.required(teacher.phone);
-        validation.required(teacher.city);
+    public static void createTeacher(String firstName,
+            String email,
+            int phone,
+            int city) {
+        validation.required(firstName);
+        validation.required(email);
+        validation.required(phone);
+        validation.required(city);
         if (validation.hasErrors()) {
             for (play.data.validation.Error error : validation.errors()) {
-                params.flash(); // add http parameters to the flash scope
-                validation.keep(); // keep the errors for the next request
-                register();
+                System.out.println(error.message());
             }
-        } else {
+            params.flash();
+            validation.keep();
+            register();
+        }
+
+        if (!validation.hasErrors()) {
+            Teacher teacher = new Teacher();
+            teacher.setFirstName(firstName);
+            teacher.setEmail(email);
+            teacher.setPhone(phone);
+            teacher.setCity(city);
+            teacher.setCityName(teacher.getCityName(teacher.city));
+            teacher.setEmployeeNumber(teacher.getIndex());
             teacher.save();
             System.out.println("----------------saved----------------");
             System.out.println("teacher name saved: " + teacher.firstName);
-            System.out.println("teacher last name saved: " + teacher.lastName);
             System.out.println("teacher email: " + teacher.email);
             System.out.println("teacher id: " + teacher.employeeNumber);
             System.out.println("teacher phone: " + teacher.phone);
@@ -48,16 +56,5 @@ public class Teachers extends Controller {
             register();
         }
 
-    }
-
-    public static int getCurrentIndex() {
-        Teacher teacher = new Teacher();
-        return teacher.getCurrentIndex();
-    }
-
-    private static void searchById(int parseInt) {
-    }
-
-    private static void searchByName(String s) {
     }
 }

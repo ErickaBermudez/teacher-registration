@@ -12,3 +12,13 @@ function alertSuccess(){
     }, 2000);
     $("#register").submit();
 }
+
+var cityID = document.getElementById("setCity").value;
+if (cityId !== 0){
+    document.getElementById('city').value = parseInt(cityID);
+}else{
+    document.getElementById('city').value = 1;
+}
+
+
+

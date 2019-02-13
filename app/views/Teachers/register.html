@@ -1,6 +1,6 @@
-#{extends 'main.html' /}
+#{extends 'main.html'/}
 #{set title:'New Teacher' /}
-<div class="container d-flex align-items-center">
+<div class="container d-flex align-items-center full-width">
     <div id="register-container"  class="container">
         <div class="row info-header">
             <h2>New teacher</h2>
@@ -8,7 +8,7 @@
         <div class="row info-content">
             #{ifErrors}
             <div class="alert alert-danger" role="alert">
-                Oops! All fields are required.
+                Oops! There was an error.
             </div>
             #{/ifErrors}
             #{if flash.success}
@@ -17,49 +17,45 @@
             </div>
 
             #{/if}
-            <form name="formReg" id="register" method="POST" action="/submit" class="form-horizontal full-width">
+            #{form @Teachers.createTeacher()}
+            <div class="form-horizontal full-width">
+                
                 #{field 'firstName'}
                 <div class="form-group">
-                    <label for="name">First name</label>
-                    <input name="teacher.firstName"
-                           required
-                           id="firstName" class="form-control form-control-lg" type="text" placeholder="John" oninput="this.className = ' '">
-                </div>
-                #{/field}
-
-                #{field 'lastName'}
-                <div class="form-group">
-                    <label for="last-name">Last name</label>
-                    <input name="teacher.lastName"
-                           required
-                           id="lastName" class="form-control form-control-lg" type="text" placeholder="Doe" oninput="this.className = ' '">
+                    <label for="name">Name</label>
+                    <input name="firstName"
+                           value="${flash.firstName}"
+                           id="firstName" class="form-control form-control-lg" type="text" placeholder="John Doe" oninput="this.className = ' '">
+                        <span class="error danger">#{error 'firstName' /}</span>
                 </div>
                 #{/field}
 
                 #{field 'email'}
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input name="teacher.email"
-                           id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '"
-                           required>
-                    <span class="error">#{error 'email' /}</span>
+                    <input name="email"
+                           value="${flash.email}"
+                           id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '">
+                    <span class="error danger">#{error 'email' /}</span>
                 </div>
                 #{/field}
                 #{field 'phone'}
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input name="teacher.phone"
-                           required
-                           pattern="^\d{7}$"
-                           title="Seven digits ONLY NUMBERS"
+                    <input name="phone"
+                           value="${flash.phone}"
+                           title="7 digits only numbers"
                            id="phone" class="form-control form-control-lg" type="tel" placeholder="4997270" oninput="this.className = ' '">
+                    <span class="error danger">#{error 'phone' /}</span>
                 </div>
                 #{/field}
                 #{field 'city'}
+                
                 <div class="form-group">
                     <label for="city">Select your city: </label>
-                    <select name="teacher.city" class="custom-select">
-                        <option value="1" selected>Chihuahua</option>
+                    <select id="city" name="city"
+                            class="custom-select">
+                        <option value="1">Chihuahua</option>
                         <option value="2">Guadalajara</option>
                         <option value="3">Sonora</option>
                         <option value="4">Mexicalli</option>
@@ -68,7 +64,9 @@
                 #{/field}
 
                 <center><button type="submit" class="save">Save</button></center>
-            </form>       
+            </div>
+            #{/form}
+            <input type="hidden" id="setCity" value="${flash.city}"/>
         </div>
     </div>
 </div>
