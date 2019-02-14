@@ -5,20 +5,24 @@
  */
 
 
-function alertSuccess(){
+function alertSuccess() {
     $(".alertSuccess").show();
-        setTimeout(function(){
-          $(".alertSuccess").hide(); 
+    setTimeout(function() {
+        $(".alertSuccess").hide();
     }, 2000);
     $("#register").submit();
 }
 
-var cityID = document.getElementById("setCity").value;
-if (cityId !== 0){
-    document.getElementById('city').value = parseInt(cityID);
-}else{
-    document.getElementById('city').value = 1;
-}
+
+/*
+ var cityID = document.getElementById("setCity").value;
+ if (cityID !== ''){
+ document.getElementById('city').value = parseInt(cityID);
+ }else{
+ document.getElementById('city').value = 1;
+ }
+ */
+
 
 
 

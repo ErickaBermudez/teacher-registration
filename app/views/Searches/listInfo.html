@@ -31,7 +31,7 @@ and open the template in the editor.
             <span class="show-teachers">
                 #{list items: teachers}
                     ${teachers.employeeNumber.toString().replaceAll("\\[", "").replaceAll("\\]","")} &nbsp;&nbsp;&nbsp;&nbsp; 
-                    ${teachers.firstName.toString().replaceAll("\\[", "").replaceAll("\\]","")} ${teachers.lastName.toString().replaceAll("\\[", "").replaceAll("\\]","")} &nbsp;&nbsp;&nbsp;&nbsp; 
+                    ${teachers.firstName.toString().replaceAll("\\[", "").replaceAll("\\]","")} &nbsp;&nbsp;&nbsp;&nbsp; 
                     ${teachers.email.toString().replaceAll("\\[", "").replaceAll("\\]","")}&nbsp;&nbsp;&nbsp;&nbsp; 
                     ${teachers.phone.toString().replaceAll("\\[", "").replaceAll("\\]","")}&nbsp;&nbsp;&nbsp;&nbsp; 
                     ${teachers.cityName.toString().replaceAll("\\[", "").replaceAll("\\]","")}&nbsp;&nbsp;&nbsp;&nbsp; 

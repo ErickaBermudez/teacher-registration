@@ -17,14 +17,14 @@
             </div>
 
             #{/if}
-            #{form @Teachers.createTeacher()}
-            <div class="form-horizontal full-width">
+            <form action="@{Teachers.createTeacher}" class="form-horizontal full-width">
                 
                 #{field 'firstName'}
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input name="firstName"
                            value="${flash.firstName}"
+                           required
                            id="firstName" class="form-control form-control-lg" type="text" placeholder="John Doe" oninput="this.className = ' '">
                         <span class="error danger">#{error 'firstName' /}</span>
                 </div>
@@ -35,6 +35,7 @@
                     <label for="email">Email</label>
                     <input name="email"
                            value="${flash.email}"
+                           required
                            id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '">
                     <span class="error danger">#{error 'email' /}</span>
                 </div>
@@ -44,6 +45,7 @@
                     <label for="phone">Phone Number</label>
                     <input name="phone"
                            value="${flash.phone}"
+                           required
                            title="7 digits only numbers"
                            id="phone" class="form-control form-control-lg" type="tel" placeholder="4997270" oninput="this.className = ' '">
                     <span class="error danger">#{error 'phone' /}</span>
@@ -64,9 +66,8 @@
                 #{/field}
 
                 <center><button type="submit" class="save">Save</button></center>
-            </div>
-            #{/form}
-            <input type="hidden" id="setCity" value="${flash.city}"/>
+            </form>
+            <!--<input type="hidden" id="setCity" value="${flash.city}"/>-->
         </div>
     </div>
 </div>

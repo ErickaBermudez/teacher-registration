@@ -21,11 +21,13 @@ public class Teachers extends Controller {
 
     public static void createTeacher(String firstName,
             String email,
-            int phone,
-            int city) {
+            Integer phone,
+            Integer city) {
         validation.required(firstName);
         validation.required(email);
+        validation.email(email);
         validation.required(phone);
+        validation.phone(phone);
         validation.required(city);
         if (validation.hasErrors()) {
             for (play.data.validation.Error error : validation.errors()) {
