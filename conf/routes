@@ -23,3 +23,6 @@ POST    /find                                   Searches.search
 
 GET     /search                                 Searches.listInfo
 POST    /search                                 Searches.listInfo
+
+GET     /list                                   Searches.listAll
+POST    /list                                   Searches.listAll

@@ -36,7 +36,7 @@ html, body{
 
 
 .info-header{
-    background-color: var(--main-bright-color);
+    background-color: var(--main-bright-color) !important;
     padding-top: 2vw;
     padding-bottom: 2vw; 
     padding-left: 2vw;
@@ -62,7 +62,6 @@ html, body{
 .danger {
     color: var(--danger-text);
 }
-
 //******************************** tabs ****************************/
 
  /* Style the form */

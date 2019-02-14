@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+
+<table class="table">
+  <thead class="info-header">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">City</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+      #{list items: teachers, as:'teacher'}
+    <tr>
+      <th scope="row">${teacher.employeeNumber}</th>
+      <td>${teacher.firstName} </td>
+      <td>${teacher.email}</td>
+      <td>${teacher.phone}</td>
+      <td>${teacher.cityName}</td>
+      <td><i class="fas fa-trash-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-edit fa-lg"></i></td>
+    </tr>
+    #{/list}
+  </tbody>
+</table>

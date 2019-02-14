@@ -19,16 +19,10 @@ public class Searches extends Controller {
     public static void search(){
         render();
     }
-
-    public static void determineSearch(Search input) {
-        if (isInteger(input.content)) {
-            System.out.println("it worked!");
-
-            //searchById(Integer.parseInt(s));
-        } else {
-            //searchByName(s);
-        }
-        search();
+    
+    public static void listAll(){
+        List<Teacher> teachers = Teacher.findAll(); 
+        render(teachers);
     }
 
     public static boolean isInteger(String s) {
