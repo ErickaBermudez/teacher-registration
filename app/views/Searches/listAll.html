@@ -19,8 +19,18 @@
       <td>${teacher.email}</td>
       <td>${teacher.phone}</td>
       <td>${teacher.cityName}</td>
-      <td><i class="fas fa-trash-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-edit fa-lg"></i></td>
+      <td><a onclick="deleteTeacher()"><i class="fas fa-trash-alt fa-lg"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="@{Teachers.edit(teacher.employeeNumber)}"<i class="fas fa-edit fa-lg"></i></a></td>
     </tr>
     #{/list}
   </tbody>
 </table>
+
+<script>
+function deleteTeacher() {
+  var txt;
+  var r = confirm("Delete teacher ${teacher?.firstName}");
+  if (r == true) {
+      window.location.href = '@{Teachers.deleteTeacher(teacher?.employeeNumber)}';
+  }
+}
+</script>

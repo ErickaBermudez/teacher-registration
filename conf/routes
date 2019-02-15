@@ -11,8 +11,7 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
-# Catch all
-*       /{controller}/{action}                  {controller}.{action}
+GET     /edit/{id}                              Teachers.edit
 
 # For the submit button 
 
@@ -26,3 +25,9 @@ POST    /search                                 Searches.listInfo
 
 GET     /list                                   Searches.listAll
 POST    /list                                   Searches.listAll
+
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
+
+

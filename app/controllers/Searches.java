@@ -47,6 +47,7 @@ public class Searches extends Controller {
         }
     }
     
+    
     public static void error(){
         render();
     }

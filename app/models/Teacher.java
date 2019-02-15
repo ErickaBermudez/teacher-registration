@@ -119,5 +119,11 @@ public class Teacher extends Model{
         return Teacher.find("byEmployeeNumber", number).fetch();
     }
     
+    public Teacher getTeacherByTeacherID(int id){
+        Teacher teacher = new Teacher();
+        teacher = Teacher.find("byEmployeeNumber", id).first();
+        return teacher;
+    }
+    
 
 }

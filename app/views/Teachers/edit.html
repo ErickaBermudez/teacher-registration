@@ -1,0 +1,84 @@
+#{extends 'main.html'/}
+#{set title:'Edit Teacher' /}
+<div class="container d-flex align-items-center full-width">
+    <div id="register-container"  class="container">
+        <div class="row info-header">
+            <h2>Edit teacher</h2>
+        </div>
+        <div class="row info-content">
+            #{ifErrors}
+            <div class="alert alert-danger" role="alert">
+                Oops! There was an error.
+            </div>
+            #{/ifErrors}
+            #{if flash.success}
+            <div class="alert alert-success" role="alert">
+                ${flash.success}
+            </div>
+
+            #{/if}
+            <form action="@{Teachers.editTeacher}" class="form-horizontal full-width">
+
+                #{field 'firstName'}
+                <div class="form-group">
+                    <label for="id">ID: </label>
+                    <input name="id"
+                           value="${teacher.id}"
+                           readonly
+                           id="id" class="form-control form-control-lg" type="text" placeholder="John Doe" oninput="this.className = ' '">
+                    <span class="error danger">#{error 'firstName' /}</span>
+                </div>
+                #{/field}
+
+                #{field 'firstName'}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input name="firstName"
+                           value="${teacher.firstName}"
+                           required
+                           id="firstName" class="form-control form-control-lg" type="text" placeholder="John Doe" oninput="this.className = ' '">
+                    <span class="error danger">#{error 'firstName' /}</span>
+                </div>
+                #{/field}
+
+                #{field 'email'}
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input name="email"
+                           value="${teacher.email}"
+                           required
+                           id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '">
+                    <span class="error danger">#{error 'email' /}</span>
+                </div>
+                #{/field}
+                #{field 'phone'}
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input name="phone"
+                           value="${teacher.phone}"
+                           required
+                           title="7 digits only numbers"
+                           id="phone" class="form-control form-control-lg" type="tel" placeholder="4997270" oninput="this.className = ' '">
+                    <span class="error danger">#{error 'phone' /}</span>
+                </div>
+                #{/field}
+                #{field 'city'}
+
+                <div class="form-group">
+                    <label for="city">Select your city: </label>
+                    <select id="city" name="city"
+                            class="custom-select">
+                        <option value="1">Chihuahua</option>
+                        <option value="2">Guadalajara</option>
+                        <option value="3">Sonora</option>
+                        <option value="4">Mexicalli</option>
+                    </select>
+                </div>
+                #{/field}
+
+                <center><button type="submit" class="save">Save</button></center>
+            </form>
+            <input type="hidden" id="setCity" value="${teacher.city}"/>
+        </div>
+    </div>
+</div>

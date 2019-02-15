@@ -14,14 +14,13 @@ function alertSuccess() {
 }
 
 
-/*
  var cityID = document.getElementById("setCity").value;
  if (cityID !== ''){
  document.getElementById('city').value = parseInt(cityID);
  }else{
  document.getElementById('city').value = 1;
  }
- */
+
 
 
 
