@@ -35,7 +35,10 @@ and open the template in the editor.
                     ${teachers.email.toString().replaceAll("\\[", "").replaceAll("\\]","")}&nbsp;&nbsp;&nbsp;&nbsp; 
                     ${teachers.phone.toString().replaceAll("\\[", "").replaceAll("\\]","")}&nbsp;&nbsp;&nbsp;&nbsp; 
                     ${teachers.cityName.toString().replaceAll("\\[", "").replaceAll("\\]","")}&nbsp;&nbsp;&nbsp;&nbsp; 
-                    <i class="fas fa-trash-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-edit fa-lg"></i>
+                    <a href="@{Teachers.delete(number)}"><i class="fas fa-trash-alt fa-lg"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="@{Teachers.edit(number)}"><i class="fas fa-edit fa-lg"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="@{Teachers.printTeacher(number)}"><i class="fas fa-print fa-lg"></i></a>
+                    
                 #{/list}
             </span>
         </div>

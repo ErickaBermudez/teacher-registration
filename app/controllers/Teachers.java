@@ -7,6 +7,7 @@ package controllers;
 
 import static controllers.Application.*;
 import static controllers.Searches.listAll;
+import javax.swing.JOptionPane;
 import models.Teacher;
 import play.data.validation.*;
 import play.mvc.Controller;
@@ -23,6 +24,20 @@ public class Teachers extends Controller {
 
     public static void edit(Integer id) {
         Teacher teacher = new Teacher();
+        teacher = teacher.getTeacherByTeacherID(id);
+        render(teacher);
+    }
+    
+    public static void delete(Integer id){
+        Teacher teacher = new Teacher();
+        teacher = teacher.getTeacherByTeacherID(id);
+        flash.success("Teacher %s deleted succefully!", teacher.firstName);
+        teacher.delete();
+        listAll();
+    }
+    
+    public static void printTeacher(Integer id){
+        Teacher teacher = new Teacher(); 
         teacher = teacher.getTeacherByTeacherID(id);
         render(teacher);
     }
@@ -113,13 +128,5 @@ public class Teachers extends Controller {
             edit(id);
         }
 
-    }
-
-    public static void deleteTeacher(int id) {
-        Teacher teacher = new Teacher();
-        teacher = teacher.getTeacherByTeacherID(id);
-        flash.success("Teacher %s deleted succefully!", teacher.firstName);
-        teacher.delete();
-        listAll();
     }
 }

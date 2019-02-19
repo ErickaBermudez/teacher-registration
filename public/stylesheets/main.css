@@ -161,3 +161,10 @@ button.search{
 .text-container{
     padding: 3vw !important;
 }
+
+.table-container{
+    padding: 2vw; 
+    width: 80% !important;
+    position: absolute; 
+    left: 10%;
+}

@@ -23,9 +23,9 @@
                 <div class="form-group">
                     <label for="id">ID: </label>
                     <input name="id"
-                           value="${teacher.id}"
+                           value="${teacher?.id}"
                            readonly
-                           id="id" class="form-control form-control-lg" type="text" placeholder="John Doe" oninput="this.className = ' '">
+                           id="id" class="form-control form-control-lg" type="text" placeholder="Does not exist" oninput="this.className = ' '">
                     <span class="error danger">#{error 'firstName' /}</span>
                 </div>
                 #{/field}
@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input name="firstName"
-                           value="${teacher.firstName}"
+                           value="${teacher?.firstName}"
                            required
                            id="firstName" class="form-control form-control-lg" type="text" placeholder="John Doe" oninput="this.className = ' '">
                     <span class="error danger">#{error 'firstName' /}</span>
@@ -45,7 +45,7 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input name="email"
-                           value="${teacher.email}"
+                           value="${teacher?.email}"
                            required
                            id="email" class="form-control form-control-lg" type="email" placeholder="john@email.com" oninput="this.className = ' '">
                     <span class="error danger">#{error 'email' /}</span>
@@ -55,7 +55,7 @@
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
                     <input name="phone"
-                           value="${teacher.phone}"
+                           value="${teacher?.phone}"
                            required
                            title="7 digits only numbers"
                            id="phone" class="form-control form-control-lg" type="tel" placeholder="4997270" oninput="this.className = ' '">
@@ -78,7 +78,7 @@
 
                 <center><button type="submit" class="save">Save</button></center>
             </form>
-            <input type="hidden" id="setCity" value="${teacher.city}"/>
+            <input type="hidden" id="setCity" value="${teacher?.city}"/>
         </div>
     </div>
 </div>
