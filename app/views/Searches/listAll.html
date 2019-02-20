@@ -21,7 +21,7 @@
                 <td>${teacher.phone}</td>
                 <td>${teacher.cityName}</td>
                 <td class="hide">
-                    <a href="@{Teachers.delete(teacher.employeeNumber)}"><i class="fas fa-trash-alt fa-lg"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="@{Teachers.delete(teacher.employeeNumber)}" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt fa-lg"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="@{Teachers.edit(teacher.employeeNumber)}"<i class="fas fa-edit fa-lg"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="@{Teachers.printTeacher(teacher.employeeNumber)}"><i class="fas fa-print fa-lg"></i></a>
                 </td>
